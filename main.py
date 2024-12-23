@@ -1,10 +1,12 @@
 import os
 from dotenv import load_dotenv
+from config import DELAY
 import requests
 from time import sleep
 import random
 
 load_dotenv()
+
 
 def save_and_download_image(picture_url,photo_path):
             response = requests.get(picture_url)
@@ -40,4 +42,6 @@ while True:
     response = requests.post(f'https://api.telegram.org/bot{telegram_token}/sendPhoto?chat_id={chat_id}&caption={abobe}', files=file)
     
 
-    sleep(10)
+    
+    
+    sleep(DELAY)
